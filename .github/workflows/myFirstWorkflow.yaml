@@ -12,7 +12,7 @@ on:
 
 jobs:
     on-push:
-        if: github.action.push
+        if: github.event_name == 'push'
         runs-on: ubuntu-latest
         steps:
             - name: "push log"
@@ -22,7 +22,7 @@ jobs:
               run: date
 
     on-pull-request:
-        if: github.action.pull_request
+        if: github.event_name == 'pull_request'
         runs-on: ubuntu-latest
         steps:
             - name: "pull log"

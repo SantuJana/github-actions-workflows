@@ -31,7 +31,7 @@ jobs:
               run: echo "pull request to master"
 
     on-pull-request-closed:
-        if: github.event_name == 'pull_request' && github.action.type == 'closed'
+        if: github.event_name == 'pull_request' && github.event.action == 'closed'
         runs-on: ubuntu-latest
         steps:
             - name: "pull closed"

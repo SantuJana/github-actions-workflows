@@ -9,6 +9,8 @@ on:
     pull_request:
         branches:
             - master
+        types:
+            - closed
 
 jobs:
     on-push:
@@ -27,3 +29,10 @@ jobs:
         steps:
             - name: "pull log"
               run: echo "pull request to master"
+
+    on-pull-request-closed:
+        if: github.event_name == 'pull_request' && github.action.type == 'closed'
+        runs-on: ubuntu-latest
+        steps:
+            - name: "pull closed"
+              run: echo "pull request closed"

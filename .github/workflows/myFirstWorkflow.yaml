@@ -4,6 +4,7 @@ on:
     push:
         branches:
             - master
+            - production
 
 jobs:
     on-push:

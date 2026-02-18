@@ -5,6 +5,10 @@ on:
         branches:
             - master
             - production
+    
+    pull_request:
+        branches:
+            - master
 
 jobs:
     on-push:
@@ -15,3 +19,9 @@ jobs:
 
             - name: "Print current time"
               run: date
+
+    on-pull-request:
+        runs-on: ubuntu-latest
+        steps:
+            - name: "pull log"
+              run: echo "pull request to master"

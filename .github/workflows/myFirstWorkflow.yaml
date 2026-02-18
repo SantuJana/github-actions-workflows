@@ -1,0 +1,16 @@
+name: "My First Workflow"
+
+on:
+    push:
+        branches:
+            - master
+
+jobs:
+    on-push:
+        runs-on: ubuntu-latest
+        steps:
+            - name: "push log"
+              run: echo "pushed on master branch"
+
+            - name: "Print current time"
+              run: date
